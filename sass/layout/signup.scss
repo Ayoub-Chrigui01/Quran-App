@@ -1,0 +1,32 @@
+@import "../abstracts/variables.scss";
+.login-btn {
+  align-self: start;
+  font-size: $font-size-medium;
+  margin-left: 3.5rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 2px solid;
+
+  &:link,
+  &:visited {
+    color: $font-color-primary;
+  }
+
+  &:active,
+  &:hover {
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    filter: brightness(70%);
+  }
+}
+
+.panel--signup {
+  padding: 3rem 2rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

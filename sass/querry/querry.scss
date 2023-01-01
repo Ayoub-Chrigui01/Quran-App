@@ -1,0 +1,165 @@
+@media (max-width: 1400px) {
+  .app__profile {
+    display: none !important;
+  }
+
+  .app__grid {
+    width: 100%;
+  }
+
+  .app__container {
+    width: 95vw;
+    margin-top: 5rem;
+  }
+
+  .app__main.small {
+    .app__read {
+      width: 50%;
+    }
+    .app__grid {
+      width: 22%;
+    }
+    .surah__cards {
+      grid-template-columns: repeat(auto-fill, 24rem);
+    }
+    .surah__card {
+      width: 24rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+  .app__main.small {
+    .app__read {
+      width: 47%;
+    }
+    .app__grid {
+      width: 25%;
+    }
+    .surah__cards {
+      grid-template-columns: repeat(auto-fill, 22rem);
+    }
+    .surah__card {
+      width: 22rem;
+      padding: 1rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 58%;
+  }
+
+  .app__read .first-ayah {
+    color: #000;
+    font-size: 2.7rem;
+  }
+
+  .app__main.small .app__read {
+    width: 100%;
+  }
+
+  .app__main .main__sidebar {
+    position: absolute;
+    background: #f9f9f9;
+    height: 100vh;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    padding: 1rem 0;
+    transform: translate(-100%, 0);
+    transition: transform 0.4s ease-in-out;
+    z-index: 100;
+    &.show {
+      transform: translate(0, 0);
+    }
+  }
+
+  .app__title {
+    display: none;
+  }
+
+  .app .search__container {
+    width: 100%;
+  }
+
+  .app .sort__card {
+    padding: 1rem;
+  }
+  .main__sidebar .sidebar__top .sidebar__logo {
+    display: block;
+    height: 12%;
+    margin-left: 0rem;
+  }
+
+  .app__logo__container .app__logo {
+    display: none;
+  }
+
+  .surah__card {
+    width: 24rem;
+  }
+
+  .close-button {
+    display: block;
+  }
+
+  .app__main.small {
+    .app__grid {
+      display: none;
+    }
+  }
+
+  .app__container.small {
+    height: 75vh;
+    margin-top: 0;
+    .search__container {
+      display: none;
+    }
+    .app__header {
+      justify-content: center;
+    }
+    .app__control {
+      width: 67%;
+      justify-content: center;
+      gap: 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 2rem;
+      background: #d6d6d6;
+      transform: translate(100%, 0);
+      transition: transform 0.4s ease-in-out;
+      z-index: 100;
+
+      &.show {
+        transform: translate(0, 0);
+      }
+
+      &__text {
+        gap: 1rem;
+      }
+
+      &__audio {
+        gap: 1rem;
+      }
+    }
+    .app__control__audio .button {
+      border-radius: 10px;
+      justify-self: center;
+      padding: 1rem 2rem;
+      font-size: 2rem;
+    }
+    .control-close {
+      display: block;
+    }
+  }
+  .small .control-open {
+    display: block;
+  }
+}

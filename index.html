@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Content/imgs/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Roboto+Slab:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer type="module" src="javascript/controller.js"></script>
+    <!-- <script defer src="index.js"></script> -->
+    <!-- <script defer src="index.js.map"></script> -->
+    <title>Quran App</title>
+  </head>
+  <body>
+    <!-- Background Image -->
+    <div class="background">
+      <img
+        src="Content/imgs/background-image.jpg"
+        alt="Picture of the Quran"
+        class="background__img"
+      />
+    </div>
+
+    <div class="succes">
+      <div class="succes__timer"></div>
+      <div class="succes__icon-container">
+        <img
+          src="Content/icons/checkmark-circle-outline.svg"
+          alt="icon of checkmark"
+          class="succes__icon"
+        />
+      </div>
+      <div class="succes__text-container">
+        <p class="succes__text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias
+          impedit
+        </p>
+      </div>
+    </div>
+    <div class="error">
+      <div class="error__timer"></div>
+      <div class="error__icon-container">
+        <img
+          src="Content/icons/alert-outline.svg"
+          alt="icon of checkmark"
+          class="error__icon"
+        />
+      </div>
+      <div class="error__text-container">
+        <p class="error__text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias
+          impedit
+        </p>
+      </div>
+    </div>
+
+    <div class="loadingSpinner">
+      <div class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- Login Panel -->
+    <div class="panel panel--login">
+      <img
+        src="Content/imgs/logo.png"
+        alt="logo of Quran"
+        class="panel__logo"
+      />
+      <h2 class="panel__title">Log in</h2>
+      <form class="form panel__form" onsubmit="return false">
+        <label for="login-email" class="form__label">Email address:</label>
+        <input type="email" class="form__input" id="login-email" required />
+        <label for="login-password" class="form__label">Password:</label>
+        <input
+          type="password"
+          class="form__input"
+          id="login-password"
+          required
+        />
+        <div class="form__input-container">
+          <label for="login-rememberMe">Remember Me:</label>
+          <input type="checkbox"" id="login-rememberMe">
+        </div>
+        <div class="form__btn-container">
+          <button class="button" type="submit">Log in</button>
+          <button class="button login-reset" type="reset">Reset</button>
+        </div>
+      </form>
+      <a class="signup-btn" href="#">Sign up</a>
+    </div>
+
+    <!-- Signup Panel -->
+    <div class="panel panel--signup hidden">
+      <img
+        src="Content/imgs/logo.png"
+        alt="logo of Quran"
+        class="panel__logo"
+      />
+      <h2 class="panel__title">Sign up</h2>
+      <form class="form panel__form" onsubmit="return false">
+        <label for="signup-name" class="form__label">Name:</label>
+        <input type="text" class="form__input" id="signup-name" required />
+        <label for="signup-phone" class="form__label">Phone:</label>
+        <input
+          type="number"
+          class="form__input"
+          id="signup-phone"
+          required
+          min="1"
+        />
+        <label for="signup-email" class="form__label">Email Address:</label>
+        <input type="email" class="form__input" id="signup-email" required />
+        <label for="signup-password" class="form__label">Password:</label>
+        <input
+          type="password"
+          class="form__input"
+          id="signup-password"
+          required
+        />
+        <label for="signup-confirm" class="form__label"
+          >Confrim Password:</label
+        >
+        <input
+          type="password"
+          class="form__input"
+          id="singup-confirm"
+          required
+        />
+        <div class="form__btn-container">
+          <button class="button" type="submit">sign up</button>
+          <button class="button signup-reset" type="reset">Reset</button>
+        </div>
+      </form>
+      <a class="login-btn" href="#">Log in</a>
+    </div>
+
+    <!-- Main Application -->
+    <section class="app">
+      <div class="app__container">
+        <header class="app__header">
+          <div class="app__logo__container">
+            <img
+              class="app__logo"
+              src="Content/imgs/logo.png"
+              alt="Logo of Quran"
+            />
+            <h1 class="app__title">Quran</h1>
+          </div>
+          <h2 class="app__read__title"></h2>
+          <div class="search__container">
+            <input type="text" class="app__search" placeholder="Search" />
+            <img
+              class="search__button"
+              src="Content/icons/search-outline.svg"
+              alt="icon of search"
+            />
+          </div>
+        </header>
+        <main class="app__main">
+          <div class="main__sidebar">
+            <div class="sidebar__top">
+              <img src="Content/icons/close-outline.svg" class="close-button" />
+              <img
+                class="app__logo sidebar__logo"
+                src="Content/imgs/logo.png"
+                alt="Logo of Quran"
+              />
+              <img
+                src="Content/icons/book-outline-1.svg"
+                alt="icon of book"
+                class="sidebar__icon home-button active"
+              />
+              <img
+                src="Content/icons/heart-outline.svg"
+                alt="icon of heart"
+                class="sidebar__icon bookmark-button"
+              />
+              <img
+                src="Content/icons/paper-plane-outline.svg"
+                alt="icon of paper"
+                class="sidebar__icon"
+              />
+              <img
+                src="Content/icons/cash-outline.svg"
+                alt="icon of cash"
+                class="sidebar__icon"
+              />
+            </div>
+            <div class="sidebar__bottom">
+              <img
+                src="Content/icons/settings-outline.svg"
+                alt="icon of settings"
+                class="sidebar__icon settings-button"
+              />
+              <img
+                src="Content/icons/log-out-outline.svg"
+                alt="icon of logout"
+                class="sidebar__icon logout-button"
+              />
+            </div>
+          </div>
+          <div class="app__grid">
+            <div class="sort-container">
+              <div class="sort__card" data-number="1">
+                <span class="sort__span">Sort By</span><br />
+                <div class="sort__flex">
+                  <span class="sort__type">Alphabet</span>
+                  <img
+                    class="sort__icon"
+                    src="Content/icons/arrow-down-outline.svg"
+                    alt="icon of arrow down"
+                  />
+                </div>
+              </div>
+              <div class="sort__card active" data-number="2">
+                <span class="sort__span">Sort By</span><br />
+                <div class="sort__flex">
+                  <span class="sort__type">Number</span>
+                  <img
+                    class="sort__icon"
+                    src="Content/icons/arrow-down-outline.svg"
+                    alt="icon of arrow down"
+                  />
+                </div>
+              </div>
+              <div class="sort__card" data-number="3">
+                <span class="sort__span">Sort By</span><br />
+                <div class="sort__flex">
+                  <span class="sort__type">Ayahs</span>
+                  <img
+                    class="sort__icon"
+                    src="Content/icons/arrow-down-outline.svg"
+                    alt="icon of arrow down"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="surah__cards"></div>
+          </div>
+          <div class="app__profile">
+            <div class="profile__overview">
+              <img
+                class="profile__avatar"
+                src="Content/icons/person-circle-outline.svg"
+                alt="icon of avatar"
+              />
+              <div class="profile__info">
+                <span class="profile__name">Ayoub Chrigui</span>
+                <span class="profile__email">ayoubchrigui@gmail.com</span>
+              </div>
+            </div>
+            <div class="profile__last-read">
+              <div class="profile__last-read__info">
+                <span class="profile__last-read__title">Last Read</span>
+                <span class="profile__last-read__surah">Al-Faatiha</span>
+              </div>
+              <img
+                class="profile__last-read__icon"
+                src="Content/icons/book-outline.svg"
+                alt="icon of book"
+              />
+            </div>
+            <div class="profile__last-listened">
+              <div class="profile__last-listened__info">
+                <span class="profile__last-listened__title">Last Listened</span>
+                <span class="profile__last-listened__surah">Al-Faatiha</span>
+              </div>
+              <img
+                class="profile__last-listened__icon"
+                src="Content/icons/headset-outline.svg"
+                alt="icon of headset"
+              />
+            </div>
+          </div>
+          <div class="app__read hidden">
+            <!-- <h2 class="app__read__title">سُورَةُ الفَاتِحَةُ</h2> -->
+            <span class="first-ayah">﷽</span>
+            <p class="app__read__surah"></p>
+          </div>
+          <div class="app__control hidden">
+            <img src="Content/icons/close-outline.svg" class="control-close" />
+            <h2 class="app__control__title">Control Panel</h2>
+            <div class="app__control__text">
+              <h3 class="app__control__text__title">Text settings :</h3>
+              <div class="input__container">
+                <label for="inptut--font-size">font size :</label>
+                <input min="30" type="range" id="inptut--font-size" />
+              </div>
+              <div class="input__container">
+                <label for="input--font-color">font color :</label>
+                <input type="color" id="input--font-color" value="#7e7e7e" />
+              </div>
+            </div>
+            <div class="app__control__audio">
+              <h3 class="app__control__audio__title">Audio settings :</h3>
+              <div class="input__container">
+                <label for="input--listen-type">Listen :</label>
+                <select id="input--listen-type">
+                  <option value="All">All Surah</option>
+                  <option value="By">By Ayah</option>
+                </select>
+              </div>
+              <div class="input__container start-finish hidden">
+                <label for="ayah-start">Start :</label>
+                <input
+                  min="1"
+                  step="1"
+                  type="number"
+                  value="1"
+                  id="ayah-start"
+                />
+                <label for="ayah-finish">Finish :</label>
+                <input min="1" step="1" type="number" id="ayah-finish" />
+              </div>
+              <div
+                class="input__container repeat-ayah hidden"
+                style="display: none"
+              >
+                <label for="repeat-ayah">Repeat Ayah :</label>
+                <input
+                  type="number"
+                  id="repeat-ayah"
+                  min="1"
+                  value="1"
+                  step="1"
+                />
+              </div>
+              <div class="input__container">
+                <label for="input-reader">Reader :</label>
+                <select id="input-reader">
+                  <option value="Abd-el-baset">Abd-el-baset</option>
+                </select>
+              </div>
+              <div class="button--container">
+                <button class="button play-button">Play</button>
+                <button class="button reset-button">Reset</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <audio
+        src="https://download.quranicaudio.com/quran/abdulbaset_mujawwad/001.mp3"
+        controls
+      ></audio>
+    </section>
+    <img src="Content/icons/menu-outline.svg" class="menu-button" />
+    <img src="Content/icons/headset-outline.svg" class="control-open" />
+  </body>
+</html>

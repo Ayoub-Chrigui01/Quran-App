@@ -1,0 +1,316 @@
+@import "../abstracts/variables.scss";
+@import "../abstracts/mixins.scss";
+
+.app {
+  width: 0;
+  opacity: 0;
+  z-index: -10;
+  transition: opacity 0.8s ease-in-out;
+
+  @include flex-center-column;
+  gap: 2rem;
+
+  &.active {
+    width: auto;
+    opacity: 1;
+    z-index: 20;
+  }
+  &__container {
+    width: 80vw;
+    height: 80vh;
+    padding: 2rem 3rem;
+    background-color: rgba($gray-light-1, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+
+    @include flex-center-column;
+  }
+  &__header {
+    width: 100%;
+    height: 15%;
+    @include flex-spaceBetween;
+    // background-color: rgba($gray-light-1, 1);
+  }
+
+  &__logo__container {
+    height: 100%;
+    @include flex-center;
+    gap: 2rem;
+  }
+
+  &__logo {
+    height: 70%;
+    margin-left: -1.3rem;
+  }
+
+  .search__container {
+    width: 20%;
+    height: 100%;
+    position: relative;
+
+    @include flex-center;
+  }
+
+  &__search {
+    width: 100%;
+    padding: 7px 12px !important;
+    border-radius: 10px !important;
+  }
+
+  .search__button {
+    height: 26%;
+    position: absolute;
+    top: 37%;
+    right: 3%;
+    transform: scaleX(-1);
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  &__main {
+    width: 100%;
+    height: 85%;
+
+    @include flex-start;
+    gap: 2rem;
+
+    .sidebar__logo {
+      display: none;
+    }
+
+    .main__sidebar {
+      width: 4%;
+      height: 90%;
+      margin-top: 1rem;
+      margin-left: 0.3rem;
+      @include flex-spaceBetween-column;
+
+      .sidebar__top {
+        width: 100%;
+        @include flex-start-column;
+        gap: 1.5rem;
+      }
+
+      .sidebar__bottom {
+        @include flex-start-column;
+        width: 100%;
+        gap: 1.5rem;
+      }
+
+      .logout-button {
+        margin-left: 0.4rem;
+      }
+
+      .sidebar__icon {
+        @include flex-center-column;
+        width: 4rem;
+        opacity: 0.5;
+
+        &.active {
+          opacity: 1;
+        }
+
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__grid {
+    width: 75%;
+    height: 100%;
+    background-color: rgba($gray-dark-1, 0.7);
+    border-radius: 10px;
+
+    @include flex-start-column;
+  }
+  .sort {
+    &-container {
+      width: 100%;
+      @include flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      margin-top: 2rem;
+      padding-bottom: 1rem;
+
+      .sort__icon {
+        transition: all 0.4s ease-in-out;
+      }
+    }
+    &__card {
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      transition: all 0.4s ease-in-out;
+
+      &.active {
+        background-color: white;
+
+        .sort__icon {
+          transform: scaleY(-1);
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: white;
+      }
+    }
+    &__span {
+      font-size: $font-size-default;
+    }
+    &__flex {
+      @include flex-center;
+      gap: 0.5rem;
+    }
+    &__type {
+      color: #000;
+      font-weight: 700;
+      font-size: medium;
+    }
+    &__icon {
+      display: inline-block;
+      width: 2rem;
+    }
+  }
+
+  .surah__cards {
+    width: 100%;
+    padding: 2rem;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 24rem);
+    justify-content: center;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__profile {
+    width: 21%;
+    height: 100%;
+
+    @include flex-start-column;
+    gap: 1rem;
+
+    .profile {
+      &__overview {
+        width: 100%;
+        @include flex-center-column;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $gray-dark-1;
+      }
+      &__avatar {
+        width: 10rem;
+        stop-color: $font-color-primary;
+      }
+      &__info {
+        @include flex-center-column;
+      }
+      &__name {
+        font-weight: 700;
+        font-size: $font-size-medium;
+        color: black;
+      }
+      &__email {
+        color: black;
+      }
+
+      &__last-read {
+        width: 100%;
+        padding: 2rem 3rem;
+        @include flex-spaceBetween;
+
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $gray-dark-1;
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: start;
+          height: 70%;
+        }
+
+        &__title {
+          font-size: $font-size-medium;
+          font-weight: 700;
+          color: black;
+        }
+
+        &__surah {
+          font-size: 1.8rem;
+        }
+
+        &__icon {
+          width: 10rem;
+        }
+      }
+
+      &__last-listened {
+        width: 100%;
+        padding: 2rem 3rem;
+        @include flex-spaceBetween;
+
+        padding-bottom: 2rem;
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: start;
+          height: 70%;
+        }
+
+        &__title {
+          font-size: $font-size-medium;
+          font-weight: 700;
+          color: black;
+        }
+
+        &__surah {
+          font-size: 1.8rem;
+        }
+
+        &__icon {
+          width: 10rem;
+        }
+      }
+    }
+  }
+}
+
+.menu-button {
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  width: 5rem;
+  z-index: 100;
+  display: none;
+}
+
+.close-button {
+  width: 4rem;
+  display: none;
+}
+
+.control-close {
+  width: 5rem;
+  position: absolute;
+  top: 1%;
+  left: 7%;
+  display: none;
+}
+
+.control-open {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  width: 5rem;
+  z-index: 100;
+  display: none;
+}

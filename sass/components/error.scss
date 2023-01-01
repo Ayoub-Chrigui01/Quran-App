@@ -1,0 +1,48 @@
+@import "../abstracts/mixins.scss";
+@import "..//abstracts/variables.scss";
+.error {
+  width: 32rem;
+  height: 13rem;
+  border-radius: 10px;
+  padding: 0 2rem;
+  background-color: rgba($gray-light-1, 0.8);
+  overflow: hidden;
+  z-index: 50;
+
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  transition: transform 0.4s ease-out;
+  transform: translate(150%, 0);
+
+  &__timer {
+    width: 100%;
+    height: 6px;
+    background-color: $red;
+    position: absolute;
+    top: 0%;
+    right: 0;
+  }
+
+  &__text-container {
+    text-align: center;
+    color: $red;
+  }
+
+  &.show {
+    transform: translate(0, 0);
+  }
+
+  @include flex-start;
+  gap: 1rem;
+
+  &__icon-container {
+    @include flex-center;
+  }
+
+  &__icon {
+    width: 5rem;
+    stroke: $font-color-primary;
+    fill: $font-color-primary;
+  }
+}

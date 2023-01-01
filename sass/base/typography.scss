@@ -1,0 +1,18 @@
+@import "../abstracts/variables.scss";
+body {
+  font-family: "Roboto Slab", serif;
+  font-size: $font-size-default;
+  color: $font-color-primary;
+}
+
+.panel {
+  &__title {
+    font-size: $font-size-h2;
+    font-weight: 700;
+  }
+}
+
+.app__title {
+  font-size: 3.2rem;
+  font-weight: 700;
+}

@@ -1,0 +1,24 @@
+@import "abstracts/variables.scss";
+
+@import "base/base.scss";
+@import "base/typography.scss";
+@import "base/animation.scss";
+
+@import "components/background.scss";
+@import "components/formPanel.scss";
+@import "components/button.scss";
+@import "components/loadingSpinner.scss";
+@import "components/succes.scss";
+@import "components/error.scss";
+@import "components/surahCard.scss";
+
+@import "utilities/classes.scss";
+
+@import "layout/signin.scss";
+@import "layout/signup.scss";
+@import "layout/app.scss";
+@import "layout/appSmall.scss";
+
+@import "external/extern.scss";
+
+@import "querry/querry.scss";

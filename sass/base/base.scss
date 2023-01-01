@@ -1,0 +1,57 @@
+@import "../abstracts/mixins.scss";
+@import "../abstracts/variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  @include flex-center;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+input[type="checkbox"] {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+audio {
+  width: 100%;
+  background-color: $gray-dark-1;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(-150%);
+  transition: all 0.4s ease-out;
+  z-index: -1;
+
+  &::-webkit-media-controls-panel {
+    // background-color: rgba($gray-light-1, 0.8);
+    background-color: $gray-dark-1;
+  }
+
+  &.active {
+    transform: translateY(0);
+    opacity: 0.8;
+    z-index: 10;
+  }
+}

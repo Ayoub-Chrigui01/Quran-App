@@ -1,0 +1,47 @@
+@import "../abstracts/variables.scss";
+@import "../abstracts/mixins.scss";
+
+.panel {
+  background-color: rgba($gray-light-1, 0.8);
+  padding: 3rem 1rem;
+  @include flex-center-column;
+  gap: 2.5rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: opacity 4s ease-in-out;
+
+  &.fade {
+    opacity: 0;
+  }
+
+  &__logo {
+    width: 35%;
+  }
+
+  &__form {
+    // align-self: flex-start;
+    @include flex-start-column;
+  }
+
+  .form {
+    width: 80%;
+    &__input {
+      width: 102%;
+      margin-bottom: 2rem;
+    }
+    &__label {
+      margin-bottom: 0.5rem;
+    }
+    &__input-container {
+      @include flex-center;
+      gap: 1rem;
+    }
+
+    &__btn-container {
+      width: 100%;
+      @include flex-center;
+      gap: 1.5rem;
+      margin: 2rem 0 0;
+    }
+  }
+}

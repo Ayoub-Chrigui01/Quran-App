@@ -1,0 +1,16 @@
+{
+  "name": "quran-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html",
+    "scss": "node-sass sass/main.scss css/style.css -w",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0",
+    "parcel": "^2.8.2"
+  }
+}
